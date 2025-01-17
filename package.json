@@ -1,0 +1,14 @@
+{
+  "name": "whapi-client",
+  "version": "1.0.0",
+  "description": "whapi Client Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Quantum-Developers",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9"
+  }
+}
