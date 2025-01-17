@@ -19,10 +19,10 @@ async function getGroups(token, count) {
    }
 };
 
-async function createGroup(token, subject, participants, isHidden) {
+async function createGroup(token,communityId, subject, participants, isHidden) {
    try {
       const response = await axios.post(
-         `${whapi_url}/groups`,
+         `${whapi_url}/communities/${communityId}/createGroup`,
          {
             subject,
             participants,
@@ -80,7 +80,7 @@ async function getGroupDetails(token, groupId) {
 async function sendGroupInvite(token,inviteCode) {
    try {
       const response = await axios.post(
-         `${whapi_url}/groups/link/`,
+         `${whapi_url}/groups/link`,
          {
             inviteCode,
          },

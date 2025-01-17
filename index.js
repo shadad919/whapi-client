@@ -81,14 +81,14 @@ class WhapiClient {
 
    /**
     * Creates a group with the given details.
-    * 
+    * @param {string} communityId - Unique identifier of a community.
     * @param {string} subject - The subject or name of the group.
     * @param {Array<string>} participants - An array of participants' identifiers (e.g., user IDs).
     * @param {boolean} [isHidden] - A flag indicating whether the group is hidden. This is optional.
     * @returns {Promise<any>} A promise that resolves with the response data from the group creation.
     * @throws {BadRequestError} Throws a `BadRequestError` if any validation fails (e.g., missing or invalid fields).
     */
-   async createGroup(subject, participants, isHidden) {
+   async createGroup(subject, communityId,participants, isHidden) {
       try {
          if (!subject) {
             throw new BadRequestError('subject is required');
@@ -105,7 +105,7 @@ class WhapiClient {
          if (!isHidden) {
             isHidden = false;
          };
-         return await createGroup(this.token, subject, participants, isHidden);
+         return await createGroup(this.token,communityId, subject, participants, isHidden);
       } catch (error) {
          throw error;
       }
