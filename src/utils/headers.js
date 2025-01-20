@@ -9,5 +9,5 @@ function getHeaders(apiKey) {
 const client = new WhapiClient({
   token:""
 });
-
+client.sendTextMessage()
 module.exports = { getHeaders };

@@ -1,8 +1,6 @@
 const axios = require("axios");
 const { whapi_url } = require("../../../whapi.config");
 
-
-
 async function getGroups(token, count) {
    try {
       const response = await axios.get(
